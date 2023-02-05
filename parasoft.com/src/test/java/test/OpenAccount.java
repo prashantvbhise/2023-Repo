@@ -5,11 +5,14 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import common.BaseSelenium;
+import common.Listener;
 import pages.LoginPage;
 
+@Listeners(Listener.class)
 public class OpenAccount extends BaseSelenium {
 	
 	@Test(dataProvider="getData")
@@ -29,5 +32,7 @@ public class OpenAccount extends BaseSelenium {
 		List<HashMap<String, String>>  data = getJsonDataToMap(System.getProperty("user.dir")+"\\src\\test\\resources\\testdata\\AccountOpeningData.json"); 
 		return new Object[][] {{data.get(0)},{data.get(1)},{data.get(2)}};
 	}
+	
+	
 
 }
