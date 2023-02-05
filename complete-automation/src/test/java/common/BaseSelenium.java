@@ -1,7 +1,14 @@
 package common;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -32,6 +39,17 @@ public class BaseSelenium {
 	public void afterEveryMethod() {
 		
 		WebDriverFactory.getDriver().quit();
+		
+	}
+	
+	public String getScreenshots(String testCaseName, ChromeDriver chromeDriver) throws IOException {
+		
+		String timeStamp = new SimpleDateFormat("yyyy.MM.dd").format(new Date());
+		TakesScreenshot ts = (TakesScreenshot)WebDriverFactory.getDriver();
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		File file = new File(System.getProperty("user.dir")+"//reports//" +"//"+timeStamp +"//"+ testCaseName +"//"+ testCaseName +".png");
+		FileUtils.copyFile(source, file);
+		return System.getProperty("user.dir")+"//reports//" +"//"+timeStamp +"//"+ testCaseName +"//"+ testCaseName +".png";
 		
 	}
 	

@@ -9,10 +9,10 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import common.BaseSelenium;
-import common.Listener;
+import common.ITestListenerImpl;
 import pages.LoginPage;
 
-@Listeners(Listener.class)
+@Listeners(ITestListenerImpl.class)
 public class OpenAccount extends BaseSelenium {
 	
 	@Test(dataProvider="getData")

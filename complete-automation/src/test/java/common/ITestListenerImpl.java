@@ -10,17 +10,17 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
-public class Listener extends BaseSelenium implements ITestListener {
-
+public class ITestListenerImpl extends BaseSelenium implements ITestListener{
+	
 	ExtentTest test;
-
+	
 	ExtentReports extent = ExtentReporterNG.getReportObject();
 
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
 		//ITestListener.super.onTestStart(result);
-		test = extent.createTest(result.getMethod().getMethodName());
-
+		
+		test= extent.createTest(result.getMethod().getMethodName());
 	}
 
 	public void onTestSuccess(ITestResult result) {
@@ -33,6 +33,7 @@ public class Listener extends BaseSelenium implements ITestListener {
 		// TODO Auto-generated method stub
 		//ITestListener.super.onTestFailure(result);
 		test.fail(result.getThrowable());
+		
 		String filePath = null;
 		try {
 			filePath = getScreenshots(result.getMethod().getMethodName(), WebDriverFactory.getDriver());
@@ -41,6 +42,7 @@ public class Listener extends BaseSelenium implements ITestListener {
 			e.printStackTrace();
 		}
 		test.addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
+		
 	}
 
 	public void onTestSkipped(ITestResult result) {
@@ -66,7 +68,5 @@ public class Listener extends BaseSelenium implements ITestListener {
 	public void onFinish(ITestContext context) {
 		extent.flush();
 	}
-
-
 
 }
