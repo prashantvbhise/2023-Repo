@@ -1,0 +1,365 @@
+You are a regulatory expert specializing in cross-border banking compliance.
+
+Below is the detailed client and banker information:
+
+- Reverse Enquiry: YES
+- Reason to Fill Checklist: Onboarding a new relationship/ related party (ID: reason-1)
+- Banker Details:
+  - Name of colleague completing checklist: Allen John
+  - Banker Name: Haider Ali
+  - Banker Jurisdiction: London
+- Customer Identifier: 12345
+- Customer Details:
+  - Customer ID: 12345
+  - Wider Relationship Name: Acme Global Holdings
+  - Booking Center: London
+  - Country of Residence (Individual): United Kingdom
+  - Country of Incorporation (Entity): Cayman Islands
+  - Country of Operation (Entity): Singapore
+  - Location of Known Points of Contact:
+    - Trustees: Zurich, Switzerland
+    - Signatories: New York, USA
+    - Directors: Hong Kong
+    - Others: Dubai, UAE
+
+EEA Related Information:
+- Is EEA applicable: YES
+- Which Cross Border Manual Apply: Some content from AI will go here
+- Reverse Enquiry Salesforce Link: https://www.salesforce-my-company.com/customerRelationShip/12345
+- Playback Letter Stored: YES
+- Any Other Cross Border Requirement: No
+- Has case been referred to ECCA team: No
+
+The client is interested in the following products/services:
+
+- Banking - Current Account
+- Marketing Materials
+
+For each of these products, please provide detailed information regarding compliance requirements and evidence in the following JSON format:
+
+{
+
+  "Banking - Current Account": {
+    crossBorderRequirement: string,
+    evidence: string
+    ieElligible: YES or NO
+  },
+  "Marketing Materials": {
+    crossBorderRequirement: string,
+    evidence: string
+    ieElligible: YES or NO
+  }
+}
+
+Where:
+- "crossBorderRequirement" explains any cross-border regulatory requirements applicable for the product.
+- "evidence" includes references or documents supporting eligibility or restrictions.
+
+IMPORTANT: Your answer must be based *only on the provided knowledge base* and the supplied information. Do NOT use any information or assumptions outside this knowledge base. Provide explanations strictly relying on the given data.
+
+Make sure if u see undefined in any field treat it as value not available
+
+Please ensure the explanations are thorough and tailored to the client's profile.
+
+_______________________________________________________________________________________
+{
+  "country": "Belgium",
+  "products": {
+    "Marketing Materials": {
+      "isEligibleForReverseEnquiry": true,
+      "eligibleJurisdictions": ["Belgium", "France", "Luxembourg"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "Permitted as long as materials contain disclaimers and avoid investment recommendations.",
+      "evidence": "FSMA Guidance Note 2024-01 on passive marketing."
+    },
+    "Research Barclays Live": {
+      "isEligibleForReverseEnquiry": true,
+      "eligibleJurisdictions": ["Belgium", "EEA"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "Access allowed for professional clients with prior onboarding. Content must be general.",
+      "evidence": "MiFID II Article 24 and Research Unbundling FAQs."
+    },
+    "Banking - Current Account": {
+      "isEligibleForReverseEnquiry": false,
+      "eligibleJurisdictions": ["Belgium"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "Client must be onboarded in Belgium with verified residence. Remote onboarding requires enhanced KYC.",
+      "evidence": "Barclays Belgium Procedure Manual BBK-AC-2023-04."
+    },
+    "Banking - Savings Account": {
+      "isEligibleForReverseEnquiry": true,
+      "eligibleJurisdictions": ["Belgium", "Netherlands"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "Allowed under PSD2 with client-initiated onboarding and proper disclosures.",
+      "evidence": "Legal note: PSD2 Implementation Memo 2023-11."
+    },
+    "Credit": {
+      "isEligibleForReverseEnquiry": false,
+      "eligibleJurisdictions": ["Belgium"],
+      "isEEAEligible": false,
+      "crossBorderRequirement": "Prohibited unless entity is licensed under Belgium credit law. Cannot rely on reverse enquiry.",
+      "evidence": "FSMA Circular 2022/07 and National Credit Register compliance guidance."
+    },
+    "Custody & Execution only": {
+      "isEligibleForReverseEnquiry": true,
+      "eligibleJurisdictions": ["Belgium", "Germany", "France"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "Permitted under MiFID II, Article 42 for passive clients with documented understanding.",
+      "evidence": "Barclays MiFID II Custody Matrix v2.1."
+    },
+    "Advisory Investments service": {
+      "isEligibleForReverseEnquiry": false,
+      "eligibleJurisdictions": ["Belgium"],
+      "isEEAEligible": false,
+      "crossBorderRequirement": "Requires local licensing and suitability assessments. Reverse enquiry is not valid.",
+      "evidence": "ESMA Q&A on Investment Services (2024 update)."
+    },
+    "Discretionary Investments service": {
+      "isEligibleForReverseEnquiry": false,
+      "eligibleJurisdictions": [],
+      "isEEAEligible": false,
+      "crossBorderRequirement": "Cannot be offered cross-border into Belgium without passporting rights. Requires full regulatory review.",
+      "evidence": "Legal opinion by Linklaters, ref DIS/BE/2024."
+    },
+    "FX": {
+      "isEligibleForReverseEnquiry": true,
+      "eligibleJurisdictions": ["Belgium", "EEA"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "FX spot and forwards can be offered under MiFID if initiated by the client. Derivatives require EMIR compliance.",
+      "evidence": "MiFID II FX Rules - Compliance Bulletin Q1 2024."
+    },
+    "Derivatives": {
+      "isEligibleForReverseEnquiry": false,
+      "eligibleJurisdictions": ["Belgium with prior approval"],
+      "isEEAEligible": false,
+      "crossBorderRequirement": "Complex derivatives cannot be offered under reverse enquiry. Require MiFID II, EMIR, and local approvals.",
+      "evidence": "FSMA Derivatives Oversight Manual, Section 5.3."
+    }
+  }
+}
+___________________________________________________________________
+{
+  "country": "France",
+  "products": {
+    "Marketing Materials": {
+      "isEligibleForReverseEnquiry": true,
+      "eligibleJurisdictions": ["France", "Belgium", "Luxembourg"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "Permitted with disclaimers and compliance with AMF guidelines.",
+      "evidence": "AMF Position-Recommendation 2024-01 on passive marketing."
+    },
+    "Research Barclays Live": {
+      "isEligibleForReverseEnquiry": true,
+      "eligibleJurisdictions": ["France", "EEA"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "Access allowed for professional clients with prior onboarding. Content must be general.",
+      "evidence": "MiFID II Article 24 and AMF Research Guidelines."
+    },
+    "Banking - Current Account": {
+      "isEligibleForReverseEnquiry": false,
+      "eligibleJurisdictions": ["France"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "Client must be onboarded in France with verified residence. Remote onboarding requires enhanced KYC.",
+      "evidence": "French Banking Code Article L.312-1."
+    },
+    "Banking - Savings Account": {
+      "isEligibleForReverseEnquiry": true,
+      "eligibleJurisdictions": ["France", "Netherlands"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "Allowed under PSD2 with client-initiated onboarding and proper disclosures.",
+      "evidence": "Legal note: PSD2 Implementation Memo 2024-05."
+    },
+    "Credit": {
+      "isEligibleForReverseEnquiry": false,
+      "eligibleJurisdictions": ["France"],
+      "isEEAEligible": false,
+      "crossBorderRequirement": "Prohibited unless entity is licensed under French credit law. Cannot rely on reverse enquiry.",
+      "evidence": "AMF Circular 2023/09 and National Credit Register compliance guidance."
+    },
+    "Custody & Execution only": {
+      "isEligibleForReverseEnquiry": true,
+      "eligibleJurisdictions": ["France", "Germany", "Belgium"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "Permitted under MiFID II, Article 42 for passive clients with documented understanding.",
+      "evidence": "Barclays MiFID II Custody Matrix v2.2."
+    },
+    "Advisory Investments service": {
+      "isEligibleForReverseEnquiry": false,
+      "eligibleJurisdictions": ["France"],
+      "isEEAEligible": false,
+      "crossBorderRequirement": "Requires local licensing and suitability assessments. Reverse enquiry is not valid.",
+      "evidence": "ESMA Q&A on Investment Services (2025 update)."
+    },
+    "Discretionary Investments service": {
+      "isEligibleForReverseEnquiry": false,
+      "eligibleJurisdictions": [],
+      "isEEAEligible": false,
+      "crossBorderRequirement": "Cannot be offered cross-border into France without passporting rights. Requires full regulatory review.",
+      "evidence": "Legal opinion by Linklaters, ref DIS/FR/2025."
+    },
+    "FX": {
+      "isEligibleForReverseEnquiry": true,
+      "eligibleJurisdictions": ["France", "EEA"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "FX spot and forwards can be offered under MiFID if initiated by the client. Derivatives require EMIR compliance.",
+      "evidence": "MiFID II FX Rules - Compliance Bulletin Q2 2025."
+    },
+    "Derivatives": {
+      "isEligibleForReverseEnquiry": false,
+      "eligibleJurisdictions": ["France with prior approval"],
+      "isEEAEligible": false,
+      "crossBorderRequirement": "Complex derivatives cannot be offered under reverse enquiry. Require MiFID II, EMIR, and local approvals.",
+      "evidence": "AMF Derivatives Oversight Manual, Section 6.1."
+    }
+  }
+}
+__________________________________________
+{
+  "country": "France",
+  "products": {
+    "Marketing Materials": {
+      "id": "MM-001",
+      "isEligibleForReverseEnquiry": {
+        "value": true,
+        "explanation": "Marketing materials can be passively provided if they contain required disclaimers and avoid investment recommendations. This aligns with AMF guidelines on passive marketing."
+      },
+      "eligibleJurisdictions": ["France", "Belgium", "Luxembourg"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "Permitted with disclaimers and compliance with AMF guidelines.",
+      "evidence": "AMF Position-Recommendation 2024-01 on passive marketing."
+    },
+    "Research Barclays Live": {
+      "id": "RB-002",
+      "isEligibleForReverseEnquiry": {
+        "value": true,
+        "explanation": "Research content can be accessed by professional clients under MiFID II regulations if they are onboarded beforehand. This ensures compliance with AMF Research Guidelines."
+      },
+      "eligibleJurisdictions": ["France", "EEA"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "Access allowed for professional clients with prior onboarding. Content must be general.",
+      "evidence": "MiFID II Article 24 and AMF Research Guidelines."
+    },
+    "Banking - Current Account": {
+      "id": "BCA-003",
+      "isEligibleForReverseEnquiry": {
+        "value": false,
+        "explanation": "Banking services require client onboarding within France and proper residency verification. Reverse enquiry is not permitted due to strict KYC regulations."
+      },
+      "eligibleJurisdictions": ["France"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "Client must be onboarded in France with verified residence. Remote onboarding requires enhanced KYC.",
+      "evidence": "French Banking Code Article L.312-1."
+    },
+    "FX": {
+      "id": "FX-010",
+      "isEligibleForReverseEnquiry": {
+        "value": true,
+        "explanation": "FX spot and forwards can be offered if initiated by the client, ensuring compliance with MiFID II regulations. However, derivatives require EMIR adherence."
+      },
+      "eligibleJurisdictions": ["France", "EEA"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "FX spot and forwards can be offered under MiFID if initiated by the client. Derivatives require EMIR compliance.",
+      "evidence": "MiFID II FX Rules - Compliance Bulletin Q2 2025."
+    }
+  }
+}
+_________________________________________________________________________________________
+{
+  "country": "India",
+  "products": {
+    "Marketing Materials": {
+      "id": "MM-001",
+      "isEligibleForReverseEnquiry": {
+        "value": true,
+        "explanation": "Marketing materials can be provided passively if they comply with SEBI guidelines and avoid direct investment recommendations."
+      },
+      "eligibleJurisdictions": ["India", "Singapore", "UAE"],
+      "isEEAEligible": false,
+      "crossBorderRequirement": "Permitted with disclaimers and compliance with SEBI regulations.",
+      "evidence": "SEBI Circular 2024/05 on passive marketing."
+    },
+    "Research Barclays Live": {
+      "id": "RB-002",
+      "isEligibleForReverseEnquiry": {
+        "value": true,
+        "explanation": "Research content can be accessed by professional clients under RBI and SEBI regulations if they are onboarded beforehand."
+      },
+      "eligibleJurisdictions": ["India", "APAC"],
+      "isEEAEligible": false,
+      "crossBorderRequirement": "Access allowed for professional clients with prior onboarding. Content must be general.",
+      "evidence": "SEBI Research Guidelines 2025."
+    },
+    "Banking - Current Account": {
+      "id": "BCA-003",
+      "isEligibleForReverseEnquiry": {
+        "value": false,
+        "explanation": "Banking services require client onboarding within India and proper residency verification. Reverse enquiry is not permitted due to strict KYC regulations."
+      },
+      "eligibleJurisdictions": ["India"],
+      "isEEAEligible": false,
+      "crossBorderRequirement": "Client must be onboarded in India with verified residence. Remote onboarding requires enhanced KYC.",
+      "evidence": "RBI Master Circular on KYC 2025."
+    },
+    "FX": {
+      "id": "FX-010",
+      "isEligibleForReverseEnquiry": {
+        "value": true,
+        "explanation": "FX spot and forwards can be offered if initiated by the client, ensuring compliance with FEMA regulations. However, derivatives require RBI approval."
+      },
+      "eligibleJurisdictions": ["India", "APAC"],
+      "isEEAEligible": false,
+      "crossBorderRequirement": "FX spot and forwards can be offered under FEMA if initiated by the client. Derivatives require RBI compliance.",
+      "evidence": "FEMA FX Rules - Compliance Bulletin Q2 2025."
+    }
+  }
+}
+__________________________________________________________________________________________
+{
+  "country": "Finland",
+  "products": {
+    "Marketing Materials": {
+      "id": "MM-001",
+      "isEligibleForReverseEnquiry": {
+        "value": true,
+        "explanation": "Marketing materials can be passively provided if they comply with FIN-FSA guidelines and avoid direct investment recommendations."
+      },
+      "eligibleJurisdictions": ["Finland", "Sweden", "Norway"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "Permitted with disclaimers and compliance with FIN-FSA regulations.",
+      "evidence": "FIN-FSA Marketing Guidelines 2025."
+    },
+    "Research Barclays Live": {
+      "id": "RB-002",
+      "isEligibleForReverseEnquiry": {
+        "value": true,
+        "explanation": "Research content can be accessed by professional clients under MiFID II regulations if they are onboarded beforehand."
+      },
+      "eligibleJurisdictions": ["Finland", "EEA"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "Access allowed for professional clients with prior onboarding. Content must be general.",
+      "evidence": "MiFID II Article 24 and FIN-FSA Research Guidelines."
+    },
+    "Banking - Current Account": {
+      "id": "BCA-003",
+      "isEligibleForReverseEnquiry": {
+        "value": false,
+        "explanation": "Banking services require client onboarding within Finland and proper residency verification. Reverse enquiry is not permitted due to strict KYC regulations."
+      },
+      "eligibleJurisdictions": ["Finland"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "Client must be onboarded in Finland with verified residence. Remote onboarding requires enhanced KYC.",
+      "evidence": "Finnish Banking Code Section 312-1."
+    },
+    "FX": {
+      "id": "FX-010",
+      "isEligibleForReverseEnquiry": {
+        "value": true,
+        "explanation": "FX spot and forwards can be offered if initiated by the client, ensuring compliance with MiFID II regulations. However, derivatives require EMIR adherence."
+      },
+      "eligibleJurisdictions": ["Finland", "EEA"],
+      "isEEAEligible": true,
+      "crossBorderRequirement": "FX spot and forwards can be offered under MiFID if initiated by the client. Derivatives require EMIR compliance.",
+      "evidence": "MiFID II FX Rules - Compliance Bulletin Q2 2025."
+    }
+  }
+}
